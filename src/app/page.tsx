@@ -105,28 +105,7 @@ export default function LandingPage() {
         <div className="absolute inset-0 z-0 flex items-center justify-center opacity-[0.2] md:opacity-[0.25] pointer-events-none overflow-hidden transition-opacity duration-1000">
           <svg viewBox="0 0 1000 700" className="w-[150vw] h-[150vh] min-w-[1200px] min-h-[900px] max-w-none">
             <style>
-              {`
-                @keyframes pullUpAction {
-                  0%, 100% { transform: translateY(0); }
-                  45%, 55% { transform: translateY(-80px); }
-                }
-                @keyframes elbowLeft {
-                  0%, 100% { points: "-120,0 -130,65 -140,130"; }
-                  45%, 55% { points: "-120,0 -160,80 -140,50"; }
-                }
-                @keyframes elbowRight {
-                  0%, 100% { points: "120,0 130,65 140,130"; }
-                  45%, 55% { points: "120,0 160,80 140,50"; }
-                }
-                @keyframes scanVertical { 0% { transform: translateY(-100px); } 100% { transform: translateY(800px); } }
-                @keyframes pulseData { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-                
-                .body-group { animation: pullUpAction 5s ease-in-out infinite; }
-                .arm-l { animation: elbowLeft 5s ease-in-out infinite; }
-                .arm-r { animation: elbowRight 5s ease-in-out infinite; }
-                .scanner-line { animation: scanVertical 4s linear infinite; }
-                .data-node { animation: pulseData 2s infinite; }
-              `}
+              {}
             </style>
 
             {/* Grid Pattern */}
@@ -553,9 +532,9 @@ export default function LandingPage() {
 // Dummy icon for bottom CTA
 function Lock(props: any) {
   return (
-    <svg {...props} xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"2\" strokeLinecap=\"round\" strokeLinelinejoin=\"round\">
-      <rect x=\"3\" y=\"11\" width=\"18\" height=\"11\" rx=\"2\" ry=\"2\"></rect>
-      <path d=\"M7 11V7a5 5 0 0 1 10 0v4\"></path>
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinelinejoin="round">
+      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
     </svg>
   )
 }
