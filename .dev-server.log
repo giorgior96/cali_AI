@@ -153,3 +153,4 @@ React does not recognize the `strokeLinelinejoin` prop on a DOM element. If you 
 ✓ Compiled in 5ms
  GET / 200 in 25ms (compile: 2ms, render: 23ms)
  GET / 200 in 41ms (compile: 2ms, render: 39ms)
+✓ Compiled in 80ms

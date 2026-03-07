@@ -18,8 +18,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it" suppressHydrationWarning>
-      <body className={`${inter.variable} ${mono.variable} font-mono antialiased transition-colors duration-300 bg-[#F5F7FF] dark:bg-[#050505] text-slate-900 dark:text-slate-100 selection:bg-indigo-500/30`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <body className={`${inter.variable} ${mono.variable} font-mono antialiased transition-colors duration-300 bg-[#F9F7F2] dark:bg-[#050505] text-slate-900 dark:text-slate-100 selection:bg-indigo-500/30`}>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           {children}
         </ThemeProvider>
       </body>
