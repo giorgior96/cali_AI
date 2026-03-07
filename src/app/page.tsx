@@ -59,7 +59,7 @@ export default function LandingPage() {
   if (!mounted) return null;
 
   return (
-    <main className="min-h-screen relative overflow-x-hidden flex flex-col font-mono selection:bg-indigo-500/30 text-slate-900 dark:text-slate-100 bg-[#F5F7FF] dark:bg-[#050505] transition-colors duration-300">
+    <main className="min-h-screen relative overflow-x-hidden flex flex-col font-mono selection:bg-indigo-500/30 text-slate-900 dark:text-slate-100 bg-[#F9F7F2] dark:bg-[#050505] transition-colors duration-300">
       
       {/* BACKGROUND EFFECTS */}
       <div className="fixed inset-0 pointer-events-none transition-opacity duration-1000 z-0">
@@ -102,7 +102,7 @@ export default function LandingPage() {
       <section className="relative w-full h-screen flex flex-col items-center justify-center z-10 overflow-hidden">
         
         {/* === HOLOGRAPHIC BIOMECHANICAL PULL-UP BACKGROUND (AUTO ANIMATED) === */}
-        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-[0.2] md:opacity-[0.25] pointer-events-none overflow-hidden">
+        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-[0.2] md:opacity-[0.25] pointer-events-none overflow-hidden transition-opacity duration-1000">
           <svg viewBox="0 0 1000 700" className="w-[150vw] h-[150vh] min-w-[1200px] min-h-[900px] max-w-none">
             <style>
               {`
@@ -553,9 +553,9 @@ export default function LandingPage() {
 // Dummy icon for bottom CTA
 function Lock(props: any) {
   return (
-    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinelinejoin="round">
-      <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-      <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+    <svg {...props} xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" strokeWidth=\"2\" strokeLinecap=\"round\" strokeLinelinejoin=\"round\">
+      <rect x=\"3\" y=\"11\" width=\"18\" height=\"11\" rx=\"2\" ry=\"2\"></rect>
+      <path d=\"M7 11V7a5 5 0 0 1 10 0v4\"></path>
     </svg>
   )
 }
