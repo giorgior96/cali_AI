@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -105,7 +106,28 @@ export default function LandingPage() {
         <div className="absolute inset-0 z-0 flex items-center justify-center opacity-[0.2] md:opacity-[0.25] pointer-events-none overflow-hidden transition-opacity duration-1000">
           <svg viewBox="0 0 1000 700" className="w-[150vw] h-[150vh] min-w-[1200px] min-h-[900px] max-w-none">
             <style>
-              {}
+              {`
+                @keyframes pullUpAction {
+                  0%, 100% { transform: translateY(0); }
+                  45%, 55% { transform: translateY(-80px); }
+                }
+                @keyframes elbowLeft {
+                  0%, 100% { points: "-120,0 -130,65 -140,130"; }
+                  45%, 55% { points: "-120,0 -160,80 -140,50"; }
+                }
+                @keyframes elbowRight {
+                  0%, 100% { points: "120,0 130,65 140,130"; }
+                  45%, 55% { points: "120,0 160,80 140,50"; }
+                }
+                @keyframes scanVertical { 0% { transform: translateY(-100px); } 100% { transform: translateY(800px); } }
+                @keyframes pulseData { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+                
+                .body-group { animation: pullUpAction 5s ease-in-out infinite; }
+                .arm-l { animation: elbowLeft 5s ease-in-out infinite; }
+                .arm-r { animation: elbowRight 5s ease-in-out infinite; }
+                .scanner-line { animation: scanVertical 4s linear infinite; }
+                .data-node { animation: pulseData 2s infinite; }
+              `}
             </style>
 
             {/* Grid Pattern */}
@@ -453,7 +475,7 @@ export default function LandingPage() {
                     <Users size={20} />
                   </div>
                   <div>
-                    <h4 className="text-base font-black text-slate-900 dark:text-white uppercase tracking-wide">Multi-Obiettivo Intelligente</h4>
+                    <h4 className="text-base font-black text-slate-900 uppercase tracking-wide">Multi-Obiettivo Intelligente</h4>
                     <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed font-medium">Vuole imparare la Planche ma anche mettere su petto? Il sistema bilancia il volume tra skill (freschezza neurale) e ipertrofia a fine seduta.</p>
                   </div>
                 </div>
