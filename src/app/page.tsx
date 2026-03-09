@@ -85,10 +85,10 @@ const GlassMockup = () => (
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.8 + (i * 0.2) }}
             key={i} 
-            className="flex items-center justify-between p-3 bg-white border border-slate-100 rounded-xl shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
+            className="flex items-center justify-between p-3 bg-white/60 backdrop-blur-sm border border-white/50 rounded-xl shadow-[0_2px_10px_rgba(0,0,0,0.02)]"
           >
             <div className="flex items-center gap-3">
-              <div className="p-2 bg-slate-50 border border-slate-100 rounded-lg shadow-sm">{item.icon}</div>
+              <div className="p-2 bg-white/50 border border-white/40 rounded-lg shadow-sm">{item.icon}</div>
               <div>
                 <div className="text-sm font-bold text-slate-800 leading-tight mb-0.5">{item.title}</div>
                 <div className="text-[10px] font-bold tracking-wider text-slate-400 uppercase">{item.sub}</div>
