@@ -2,14 +2,18 @@
 
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-oswald: var(--font-oswald), ui-sans-serif, system-ui, sans-serif;
 }
-
-@variant dark (&:where(.dark, .dark *));
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6, .font-oswald {
+    font-family: var(--font-oswald), sans-serif;
   }
 }
 
