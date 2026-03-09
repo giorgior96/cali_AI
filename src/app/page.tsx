@@ -249,7 +249,7 @@ export default function LandingPage() {
         <div className="absolute top-[-10%] right-[0%] w-[1000px] h-[1000px] bg-gradient-to-br from-indigo-300/30 to-purple-300/30 blur-[150px] rounded-full pointer-events-none -z-10" />
 
         {/* === HOLOGRAPHIC BIOMECHANICAL PULL-UP BACKGROUND (AUTO ANIMATED) === */}
-        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-[0.30] md:opacity-[0.25] pointer-events-none overflow-hidden transition-opacity duration-1000 xl:translate-x-32">
+        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-[0.45] md:opacity-[0.40] pointer-events-none overflow-hidden transition-opacity duration-1000 xl:translate-x-32">
           <svg viewBox="0 0 1000 700" className="w-[150vw] h-[150vh] min-w-[1200px] min-h-[900px] max-w-none">
             <style>
               {`
