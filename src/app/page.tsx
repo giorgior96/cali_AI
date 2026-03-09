@@ -245,7 +245,7 @@ export default function LandingPage() {
       </header>
 
       {/* === HERO SECTION CON GLASSMORPHISM === */}
-      <section className="relative w-full min-h-[100svh] pt-36 xl:pt-24 flex flex-col items-center xl:items-start xl:justify-center z-10 max-w-7xl mx-auto px-4 sm:px-8 overflow-hidden">
+      <section className="relative w-full min-h-[100svh] pt-36 xl:pt-24 flex flex-col items-center xl:items-start xl:justify-center z-10 max-w-7xl mx-auto px-4 sm:px-8 overflow-hidden xl:overflow-visible">
         <div className="absolute top-[-10%] right-[0%] w-[1000px] h-[1000px] bg-gradient-to-br from-indigo-300/30 to-purple-300/30 blur-[150px] rounded-full pointer-events-none -z-10" />
 
         {/* === HOLOGRAPHIC BIOMECHANICAL PULL-UP BACKGROUND (AUTO ANIMATED) === */}
