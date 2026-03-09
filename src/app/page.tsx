@@ -30,11 +30,11 @@ const Marquee = () => (
     >
       {[...Array(4)].map((_, i) => (
         <div key={i} className="flex gap-16 items-center">
-          <span className="text-sm font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2"><CheckCircle2 size={16} className="text-emerald-500" /> IL TUO ALTER-EGO DIGITALE</span>
+          <span className="text-sm font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2"><CheckCircle2 size={16} className="text-emerald-500" /> SCHEDE IN 30 SECONDI</span>
           <span className="text-xl font-oswald text-slate-300">CALI.ATHLETICS</span>
-          <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">💪 RISPARMIA 40 ORE/MESE</span>
+          <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">💪 DA 30 A 100+ ALLIEVI</span>
           <span className="text-xl font-oswald text-slate-300">STREET WORKOUT PRO</span>
-          <span className="text-sm font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2"><Target size={16} className="text-indigo-500" /> KNOW-HOW SCALATO</span>
+          <span className="text-sm font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2"><Target size={16} className="text-indigo-500" /> IL TUO STILE, AUTOMATIZZATO</span>
           <span className="text-xl font-oswald text-slate-300">CALI.AI COACH</span>
         </div>
       ))}
@@ -56,7 +56,7 @@ const GlassMockup = () => (
       <div className="flex items-center justify-between border-b border-indigo-100/50 pb-4 mb-4">
         <div className="flex items-center gap-3">
           <BrainCircuit className="text-indigo-500 w-5 h-5" />
-          <span className="font-oswald text-sm tracking-wider uppercase text-slate-700">Analisi Stile in Corso...</span>
+          <span className="font-oswald text-sm tracking-wider uppercase text-slate-700">Analisi del tuo stile...</span>
         </div>
         <div className="flex gap-1.5">
           <div className="w-2.5 h-2.5 rounded-full bg-slate-200" />
@@ -69,7 +69,7 @@ const GlassMockup = () => (
       <div className="space-y-4">
         <div className="flex justify-between items-end mb-6">
           <div>
-            <div className="text-[10px] font-bold text-indigo-500 uppercase tracking-widest mb-1">Stile Appreso Da Te</div>
+            <div className="text-[10px] font-bold text-indigo-500 uppercase tracking-widest mb-1">Impara dal tuo storico</div>
             <div className="text-xl font-oswald text-slate-800 uppercase">Focus: Ipertrofia + Skills</div>
           </div>
           <div className="px-3 py-1 bg-emerald-100/50 border border-emerald-200 text-emerald-700 text-[10px] font-bold uppercase rounded-md flex items-center gap-1"><CheckSquare size={12}/> Stile Appreso</div>
@@ -119,8 +119,8 @@ const BentoGrid = () => (
         <div className="w-14 h-14 bg-indigo-50 border border-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform duration-500">
           <BrainCircuit size={28} />
         </div>
-        <h3 className="font-oswald text-3xl sm:text-4xl uppercase tracking-tight mb-4 text-slate-900 leading-[1.1]">Trasformiamo il tuo <br/>Cervello in Algoritmo</h3>
-        <p className="text-slate-500 font-medium max-w-md leading-relaxed">Non il solito generatore di schede pre-impostate. Dai in pasto a CALI.AI i tuoi migliori protocolli passati: la nostra IA estrae il tuo DNA da coach. Copia la tua logica di progressione, la scelta degli esercizi e la gestione della fatica. È esattamente il tuo stile, ma alla velocità della luce.</p>
+        <h3 className="font-oswald text-3xl sm:text-4xl uppercase tracking-tight mb-4 text-slate-900 leading-[1.1]">Il Tuo Metodo,<br/>Automatizzato</h3>
+        <p className="text-slate-500 font-medium max-w-md leading-relaxed">Carica le schede che hai già fatto per i tuoi allievi. CALI.AI impara come ragioni: quali esercizi scegli, come gestisci i volumi, come imposti le progressioni. Da lì in poi genera schede nuove che sembrano fatte da te, in pochi secondi.</p>
       </div>
     </motion.div>
 
@@ -134,8 +134,8 @@ const BentoGrid = () => (
       </motion.div>
       <div className="relative z-10 flex flex-col h-full justify-between">
         <div>
-          <h3 className="font-oswald text-2xl sm:text-3xl uppercase tracking-tight mb-4 text-white">Riprenditi il <br/>Tuo Tempo</h3>
-          <p className="text-indigo-200/80 font-medium text-sm leading-relaxed">Gestisci 100 allievi con lo sforzo che impiegavi per 10. Smetti di passare le notti a sistemare file Excel e concentra le tue energie a chiudere nuove vendite.</p>
+          <h3 className="font-oswald text-2xl sm:text-3xl uppercase tracking-tight mb-4 text-white">Più Allievi,<br/>Meno Sbattimento</h3>
+          <p className="text-indigo-200/80 font-medium text-sm leading-relaxed">Oggi per ogni scheda perdi 30-40 minuti tra Excel, calcoli e formattazione. Con CALI.AI servono 30 secondi. Segui 100 allievi con lo sforzo che oggi dedichi a 10.</p>
         </div>
         <div className="mt-12 text-5xl font-oswald text-white flex items-baseline tracking-tighter">
           -85<span className="text-2xl text-indigo-300 ml-1">%</span>
@@ -148,11 +148,11 @@ const BentoGrid = () => (
       <div className="w-14 h-14 bg-rose-100 text-rose-600 rounded-2xl flex items-center justify-center mb-8">
         <ShieldAlert size={28} />
       </div>
-      <h3 className="font-oswald text-2xl sm:text-3xl uppercase tracking-tight mb-6 text-slate-900 leading-[1.1]">Il Soffitto di <br/>Cristallo del Coach</h3>
+      <h3 className="font-oswald text-2xl sm:text-3xl uppercase tracking-tight mb-6 text-slate-900 leading-[1.1]">Dove Ti Blocchi<br/>Oggi</h3>
       <ul className="space-y-4 text-sm text-rose-900/70 font-medium">
-        <li className="flex gap-3 items-start"><XCircle size={18} className="text-rose-400 shrink-0 mt-0.5"/> Lavorare su Excel ti impedisce di scalare fisicamente oltre i 30 allievi.</li>
-        <li className="flex gap-3 items-start"><XCircle size={18} className="text-rose-400 shrink-0 mt-0.5"/> Consegni PDF anonimi e macchinosi da leggere da smartphone in palestra.</li>
-        <li className="flex gap-3 items-start"><XCircle size={18} className="text-rose-400 shrink-0 mt-0.5"/> Passi più tempo a contare i volumi medi settimanali che a correggere la tecnica o attirare leads.</li>
+        <li className="flex gap-3 items-start"><XCircle size={18} className="text-rose-400 shrink-0 mt-0.5"/> Excel non scala: oltre 25-30 allievi diventa ingestibile.</li>
+        <li className="flex gap-3 items-start"><XCircle size={18} className="text-rose-400 shrink-0 mt-0.5"/> I tuoi allievi ricevono PDF scomodi da leggere in palestra.</li>
+        <li className="flex gap-3 items-start"><XCircle size={18} className="text-rose-400 shrink-0 mt-0.5"/> Passi più tempo sui fogli di calcolo che a fare il coach.</li>
       </ul>
     </motion.div>
 
@@ -162,10 +162,10 @@ const BentoGrid = () => (
         <div className="flex-1">
           <div className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest mb-4 flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
-            Output Interattivo
+            Anteprima Live
           </div>
-          <h3 className="font-oswald text-3xl sm:text-4xl uppercase tracking-tight mb-4 text-white">Un'App Mobile, <br/>Firmata Col Tuo Nome</h3>
-          <p className="text-slate-400 font-medium text-sm leading-relaxed max-w-sm">Esci dall'era dei PDF e dei fogli calcolo illeggibili. Fai percepire l'esclusività del tuo servizio Premium servendo schede direttamente tramite un'interfaccia utente iper curata, incrementando retention e tassi di referral.</p>
+          <h3 className="font-oswald text-3xl sm:text-4xl uppercase tracking-tight mb-4 text-white">Basta PDF.<br/>I Tuoi Allievi Meritano Un'App</h3>
+          <p className="text-slate-400 font-medium text-sm leading-relaxed max-w-sm">Le schede vengono servite ai tuoi allievi tramite un'interfaccia mobile curata nei minimi dettagli. Niente più tabelle illeggibili: ogni allievo apre l'app e sa esattamente cosa fare.</p>
         </div>
         <div className="w-full md:w-[45%] p-5 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm shadow-xl relative mt-8 md:mt-0">
           <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-slate-800 rounded-full border-4 border-slate-900" />
@@ -325,7 +325,7 @@ export default function LandingPage() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="inline-flex items-center gap-3 px-4 py-2 bg-white border border-indigo-100/60 rounded-full text-[10px] sm:text-xs font-bold text-indigo-600 uppercase tracking-[0.2em] shadow-sm mb-6 mx-auto xl:mx-0 w-fit"
           >
-            <Sparkles size={14} className="text-indigo-500" /> Il Primo AI Assistant Per L'Hi-Level Coaching
+            <Sparkles size={14} className="text-indigo-500" /> L'Assistente AI per Coach di Calisthenics
           </motion.div>
           
           <motion.h1 
@@ -343,7 +343,7 @@ export default function LandingPage() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="text-slate-600 font-medium text-sm sm:text-lg max-w-xl mt-6 sm:mt-8 normal-case tracking-normal leading-relaxed mx-auto xl:mx-0"
           >
-            Passi ancora le tue serate a sistemare celle Excel? Passa i tuoi vecchi protocolli all'intelligenza artificiale, falle estrarre la tua "firma", e falle generare schede ad alto rendimento in 30 secondi netti.
+            Passi le serate a compilare schede su Excel? Carica quelle che hai già fatto, l'IA impara il tuo stile e ne genera di nuove — identiche alle tue — in 30 secondi.
           </motion.p>
 
           <motion.div 
@@ -355,8 +355,8 @@ export default function LandingPage() {
             {success ? (
               <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="p-8 text-center space-y-3 bg-white rounded-2xl">
                 <ShieldAlert className="w-12 h-12 text-emerald-500 mx-auto mb-4" />
-                <div className="text-lg font-bold text-slate-900 uppercase tracking-widest font-oswald">In Coda per il Beta</div>
-                <p className="text-sm text-slate-500 font-medium">Ti abbiamo riservato un posto: riceverai le direttive per l'onboarding prossimamente ai tuoi contatti.</p>
+                <div className="text-lg font-bold text-slate-900 uppercase tracking-widest font-oswald">Sei Dentro</div>
+                <p className="text-sm text-slate-500 font-medium">Ti abbiamo riservato un posto. Ti contatteremo appena apriamo il beta.</p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="p-2 sm:p-2.5 bg-white rounded-2xl flex flex-col sm:flex-row gap-2 relative overflow-hidden">
@@ -386,7 +386,7 @@ export default function LandingPage() {
                 </div>
               ))}
             </div>
-            <span>Oltre 50+ coach già in lista p.</span>
+            <span>50+ coach già in lista d'attesa</span>
           </motion.div>
         </div>
 
@@ -409,11 +409,11 @@ export default function LandingPage() {
             <XCircle size={14} /> Posti Beta Limitati
           </div>
           <h2 className="text-5xl sm:text-6xl md:text-7xl font-oswald uppercase tracking-tighter text-slate-900 leading-[0.9]">
-            Il Tuo Ecosistema <br/> Inizia Da Qui
+            Smetti di Fare<br/>Il Data Entry
           </h2>
-          <p className="text-slate-500 font-medium text-lg max-w-lg mx-auto leading-relaxed">Chiudi con i processi obsoleti e libera il tuo tempo. Entra in lista e lascia che l'IA apprenda il tuo metodo mentre tu formi il prossimo campione.</p>
+          <p className="text-slate-500 font-medium text-lg max-w-lg mx-auto leading-relaxed">Dedica il tuo tempo a fare il coach, non a compilare fogli di calcolo. Entra nella lista d'attesa e inizia a creare schede in automatico.</p>
           <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-black uppercase tracking-[0.2em] rounded-2xl transition-all shadow-xl hover:shadow-indigo-500/30 hover:-translate-y-1 mt-4">
-            Reclama il tuo invito <ArrowRight size={16} />
+            Entra nella lista d'attesa <ArrowRight size={16} />
           </button>
         </motion.section>
       </div>
