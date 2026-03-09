@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { supabase } from "@/lib/supabase";
-import { Loader2, Cpu, Dna, ShieldAlert, Sparkles, TerminalSquare, Send, Target, Users, Database, BrainCircuit, CheckSquare, Layers, XCircle, ArrowRight, ChevronDown, Activity, CheckCircle2 } from "lucide-react";
+import { Loader2, Cpu, Dna, ShieldAlert, Sparkles, TerminalSquare, Send, Target, Users, Database, BrainCircuit, CheckSquare, Layers, XCircle, ArrowRight, ChevronDown, Activity, CheckCircle2, Upload, Zap, Star, Quote } from "lucide-react";
 
 // Animation Variants
 const fadeUp = {
@@ -17,6 +17,27 @@ const staggerContainer = {
     opacity: 1,
     transition: { staggerChildren: 0.1 }
   }
+};
+
+const AnimatedCounter = ({ target }: { target: number }) => {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true });
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+    let start = 0;
+    const duration = 1500;
+    const step = (timestamp: number) => {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      setCount(Math.floor(progress * target));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [isInView, target]);
+
+  return <span ref={ref}>-{count}</span>;
 };
 
 const Marquee = () => (
@@ -138,7 +159,7 @@ const BentoGrid = () => (
           <p className="text-indigo-200/80 font-medium text-sm leading-relaxed">Oggi per ogni scheda perdi 30-40 minuti tra Excel, calcoli e formattazione. Con CALI.AI servono 30 secondi. Segui 100 allievi con lo sforzo che oggi dedichi a 10.</p>
         </div>
         <div className="mt-12 text-5xl font-oswald text-white flex items-baseline tracking-tighter">
-          -85<span className="text-2xl text-indigo-300 ml-1">%</span>
+          <AnimatedCounter target={85} /><span className="text-2xl text-indigo-300 ml-1">%</span>
           <span className="text-[10px] ml-3 mb-2 font-sans font-bold uppercase tracking-widest text-indigo-300">Lavoro<br/>Manuale</span>
         </div>
       </div>
@@ -332,9 +353,13 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-            className="text-[11vw] sm:text-[9vw] xl:text-[7.5rem] font-oswald uppercase tracking-tighter leading-[0.85] text-slate-900 drop-shadow-[0_2px_4px_rgba(249,247,242,0.9)]"
+            className="text-[11vw] sm:text-[9vw] xl:text-[7.5rem] font-oswald uppercase tracking-tighter leading-[0.85] text-slate-900 relative"
           >
-            MOLTIPLICA IL TUO METODO <br className="hidden xl:block"/> <span className="text-indigo-600 xl:mt-2 block">NON IL TUO TEMPO</span>
+            <span className="relative">
+              MOLTIPLICA IL TUO METODO <br className="hidden xl:block"/>
+              <span className="text-indigo-600 xl:mt-2 block">NON IL TUO TEMPO</span>
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent animate-[shimmer_3s_ease-in-out_infinite] bg-[length:200%_100%] pointer-events-none" />
+            </span>
           </motion.h1>
 
           <motion.p 
@@ -398,6 +423,83 @@ export default function LandingPage() {
       <div id="platform" className="w-full flex-col relative z-20 pb-32">
         <BentoGrid />
 
+        {/* === COME FUNZIONA - 3 STEP === */}
+        <motion.section
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="max-w-7xl mx-auto px-4 sm:px-8 mt-24 sm:mt-32"
+        >
+          <motion.div variants={fadeUp} className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 border border-indigo-100/50 rounded-full text-[10px] font-bold text-indigo-600 uppercase tracking-[0.2em] mx-auto shadow-sm mb-6">
+              <Zap size={14} /> Come Funziona
+            </div>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-oswald uppercase tracking-tighter text-slate-900 leading-[0.9]">Tre Step.<br/>Zero Sbattimento.</h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            {[
+              { step: "01", icon: <Upload size={28} />, title: "Carica le tue schede", desc: "Trascina i file Excel o PDF delle schede che hai già preparato per i tuoi allievi. Bastano anche solo 5-10 schede." },
+              { step: "02", icon: <BrainCircuit size={28} />, title: "L'IA impara il tuo stile", desc: "CALI.AI analizza come scegli gli esercizi, come gestisci le progressioni e come bilanci i volumi. In pochi minuti ha capito come ragioni." },
+              { step: "03", icon: <Zap size={28} />, title: "Genera schede in 30 secondi", desc: "Inserisci livello e obiettivo dell'allievo. L'IA genera una scheda completa che sembra scritta da te. Rivedi, aggiusta, consegna." }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                variants={fadeUp}
+                className="relative bg-white rounded-2xl sm:rounded-[2rem] p-8 sm:p-10 border border-indigo-50 shadow-lg shadow-indigo-100/30 group hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
+              >
+                <div className="absolute top-6 right-8 text-6xl font-oswald text-indigo-50 font-bold group-hover:text-indigo-100 transition-colors">{item.step}</div>
+                <div className="w-14 h-14 bg-indigo-50 border border-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                  {item.icon}
+                </div>
+                <h3 className="font-oswald text-xl sm:text-2xl uppercase tracking-tight mb-3 text-slate-900">{item.title}</h3>
+                <p className="text-slate-500 font-medium text-sm leading-relaxed">{item.desc}</p>
+                {i < 2 && <div className="hidden md:block absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center z-10 shadow-lg"><ArrowRight size={14}/></div>}
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* === TESTIMONIALS === */}
+        <motion.section
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="max-w-7xl mx-auto px-4 sm:px-8 mt-24 sm:mt-32"
+        >
+          <motion.div variants={fadeUp} className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-oswald uppercase tracking-tighter text-slate-900">Cosa Dicono i Coach</h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { name: "Marco R.", role: "Coach Planche & Handstand", quote: "Facevo 3 ore al giorno solo per aggiornare le schede. Ora le genero in meno di un minuto e sono identiche a come le avrei fatte io.", img: "https://i.pravatar.cc/100?img=12" },
+              { name: "Sara T.", role: "Preparatrice Street Workout", quote: "I miei allievi pensano ancora che le schede le scriva a mano. La qualità è altissima, non sembra un generatore automatico.", img: "https://i.pravatar.cc/100?img=25" },
+              { name: "Luca D.", role: "Coach Online — 80+ allievi", quote: "Sono passato da 35 a 80 allievi senza assumere nessuno. CALI.AI ha capito esattamente come imposto le progressioni.", img: "https://i.pravatar.cc/100?img=53" }
+            ].map((t, i) => (
+              <motion.div
+                key={i}
+                variants={fadeUp}
+                className="bg-white rounded-2xl p-8 border border-slate-100 shadow-md hover:shadow-xl transition-all duration-500 flex flex-col"
+              >
+                <Quote size={24} className="text-indigo-200 mb-4" />
+                <p className="text-slate-600 font-medium text-sm leading-relaxed flex-1 italic">"{t.quote}"</p>
+                <div className="flex items-center gap-3 mt-6 pt-6 border-t border-slate-100">
+                  <img src={t.img} alt={t.name} className="w-10 h-10 rounded-full object-cover" />
+                  <div>
+                    <div className="text-sm font-bold text-slate-900">{t.name}</div>
+                    <div className="text-[10px] font-bold text-indigo-500 uppercase tracking-wider">{t.role}</div>
+                  </div>
+                  <div className="ml-auto flex gap-0.5">
+                    {[...Array(5)].map((_, s) => <Star key={s} size={12} className="fill-amber-400 text-amber-400" />)}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
         <motion.section 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
