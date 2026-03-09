@@ -51,7 +51,7 @@ const GlassMockup = () => (
     style={{ perspective: 1000 }}
   >
     <div className="absolute -inset-1 bg-gradient-to-tr from-indigo-500 to-purple-400 rounded-3xl blur-2xl opacity-20 animate-pulse" />
-    <div className="bg-white/60 backdrop-blur-2xl border border-white rounded-3xl p-6 shadow-2xl relative overflow-hidden">
+    <div className="bg-white/40 backdrop-blur-lg border border-white/60 rounded-3xl p-6 shadow-2xl relative overflow-hidden">
       {/* Top Bar */}
       <div className="flex items-center justify-between border-b border-indigo-100/50 pb-4 mb-4">
         <div className="flex items-center gap-3">
