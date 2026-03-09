@@ -96,7 +96,7 @@ const GlassMockup = () => (
         </div>
 
         {[
-          { icon: <Activity className="text-orange-500" size={16} />, title: "Tuck Planche Hold", sub: "Protrazione scapolare", sets: "4x", reps: "15s" },
+          { icon: <Activity className="text-orange-500" size={16} />, title: "Planche Lean Push Up", sub: "Protrazione scapolare", sets: "4x", reps: "6-8" },
           { icon: <Layers className="text-indigo-500" size={16} />, title: "Planche Push Ups", sub: "Sbilanciamento", sets: "3x", reps: "6-8" },
           { icon: <Database className="text-purple-500" size={16} />, title: "HSPU al muro", sub: "RPE 8", sets: "4x", reps: "5" }
         ].map((item, i) => (
