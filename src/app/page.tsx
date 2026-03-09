@@ -442,7 +442,7 @@ export default function LandingPage() {
                 </div>
                 <h3 className="font-oswald text-xl sm:text-2xl uppercase tracking-tight mb-3 text-slate-900">{item.title}</h3>
                 <p className="text-slate-500 font-medium text-sm leading-relaxed">{item.desc}</p>
-                {i < 2 && <div className="hidden md:block absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-indigo-600 text-white rounded-full flex items-center justify-center z-10 shadow-lg"><ArrowRight size={14} /></div>}
+                {i < 2 && <div className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-indigo-600 text-white rounded-full items-center justify-center z-10 shadow-lg"><ArrowRight size={14} /></div>}
               </motion.div>
             ))}
           </div>
