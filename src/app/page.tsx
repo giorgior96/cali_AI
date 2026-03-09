@@ -353,13 +353,10 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-            className="text-[11vw] sm:text-[9vw] xl:text-[7.5rem] font-oswald uppercase tracking-tighter leading-[0.85] text-slate-900 relative"
+            className="text-[11vw] sm:text-[9vw] xl:text-[7.5rem] font-oswald uppercase tracking-tighter leading-[0.85] text-slate-900"
           >
-            <span className="relative">
-              MOLTIPLICA IL TUO METODO <br className="hidden xl:block"/>
-              <span className="text-indigo-600 xl:mt-2 block">NON IL TUO TEMPO</span>
-              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent animate-[shimmer_3s_ease-in-out_infinite] bg-[length:200%_100%] pointer-events-none" />
-            </span>
+            MOLTIPLICA IL TUO METODO <br className="hidden xl:block"/>
+            <span className="text-indigo-600 xl:mt-2 block">NON IL TUO TEMPO</span>
           </motion.h1>
 
           <motion.p 
@@ -435,7 +432,7 @@ export default function LandingPage() {
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 border border-indigo-100/50 rounded-full text-[10px] font-bold text-indigo-600 uppercase tracking-[0.2em] mx-auto shadow-sm mb-6">
               <Zap size={14} /> Come Funziona
             </div>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-oswald uppercase tracking-tighter text-slate-900 leading-[0.9]">Tre Step.<br/>Zero Sbattimento.</h2>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-oswald uppercase tracking-tighter text-slate-900 leading-[0.9]">Tre Step.<br/>Il Resto Lo Fa l'IA.</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
