@@ -47,7 +47,7 @@ const GlassMockup = () => (
     initial={{ opacity: 0, scale: 0.9, rotateY: 10 }}
     animate={{ opacity: 1, scale: 1, rotateY: 0 }}
     transition={{ duration: 1, delay: 0.4, type: "spring" }}
-    className="relative w-full max-w-2xl mx-auto xl:mx-0 mt-16 xl:mt-0 xl:absolute xl:right-[-5%] xl:top-1/2 xl:-translate-y-1/2 z-10"
+    className="relative w-full max-w-md sm:max-w-lg xl:max-w-2xl mx-auto xl:mx-0 mt-12 xl:mt-0 xl:absolute xl:right-[-5%] xl:top-1/2 xl:-translate-y-1/2 z-10"
     style={{ perspective: 1000 }}
   >
     <div className="absolute -inset-1 bg-gradient-to-tr from-indigo-500 to-purple-400 rounded-3xl blur-2xl opacity-20 animate-pulse" />
@@ -111,9 +111,9 @@ const BentoGrid = () => (
     initial="hidden"
     whileInView="visible"
     viewport={{ once: true, margin: "-100px" }}
-    className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto px-4 sm:px-8 mt-32"
+    className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-7xl mx-auto px-4 sm:px-8 mt-16 sm:mt-32"
   >
-    <motion.div variants={fadeUp} className="md:col-span-2 bg-white rounded-[2rem] p-8 sm:p-12 shadow-xl shadow-indigo-100/50 border border-indigo-50 relative overflow-hidden group">
+    <motion.div variants={fadeUp} className="md:col-span-2 bg-white rounded-2xl sm:rounded-[2rem] p-6 sm:p-12 shadow-xl shadow-indigo-100/50 border border-indigo-50 relative overflow-hidden group">
       <div className="absolute right-[-10%] top-[-10%] w-[500px] h-[500px] bg-indigo-50/50 rounded-full blur-3xl group-hover:bg-indigo-100/50 transition-colors duration-700" />
       <div className="relative z-10">
         <div className="w-14 h-14 bg-indigo-50 border border-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform duration-500">
@@ -124,7 +124,7 @@ const BentoGrid = () => (
       </div>
     </motion.div>
 
-    <motion.div variants={fadeUp} className="bg-gradient-to-br from-indigo-600 to-purple-700 rounded-[2rem] p-8 sm:p-12 shadow-xl shadow-indigo-500/20 text-white relative overflow-hidden group">
+    <motion.div variants={fadeUp} className="bg-gradient-to-br from-indigo-600 to-purple-700 rounded-2xl sm:rounded-[2rem] p-6 sm:p-12 shadow-xl shadow-indigo-500/20 text-white relative overflow-hidden group">
       <motion.div 
         animate={{ rotate: 360 }} 
         transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
@@ -144,7 +144,7 @@ const BentoGrid = () => (
       </div>
     </motion.div>
 
-    <motion.div variants={fadeUp} className="bg-rose-50/50 border border-rose-100/60 rounded-[2rem] p-8 sm:p-12 shadow-sm relative group hover:bg-rose-50 transition-colors">
+    <motion.div variants={fadeUp} className="bg-rose-50/50 border border-rose-100/60 rounded-2xl sm:rounded-[2rem] p-6 sm:p-12 shadow-sm relative group hover:bg-rose-50 transition-colors">
       <div className="w-14 h-14 bg-rose-100 text-rose-600 rounded-2xl flex items-center justify-center mb-8">
         <ShieldAlert size={28} />
       </div>
@@ -156,7 +156,7 @@ const BentoGrid = () => (
       </ul>
     </motion.div>
 
-    <motion.div variants={fadeUp} className="md:col-span-2 bg-slate-900 rounded-[2rem] p-8 sm:p-12 shadow-2xl relative overflow-hidden text-white border border-slate-800 group">
+    <motion.div variants={fadeUp} className="md:col-span-2 bg-slate-900 rounded-2xl sm:rounded-[2rem] p-6 sm:p-12 shadow-2xl relative overflow-hidden text-white border border-slate-800 group">
       <div className="absolute right-0 bottom-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl" />
       <div className="relative z-10 flex flex-col md:flex-row items-center gap-12">
         <div className="flex-1">
@@ -249,7 +249,7 @@ export default function LandingPage() {
         <div className="absolute top-[-10%] right-[0%] w-[1000px] h-[1000px] bg-gradient-to-br from-indigo-300/30 to-purple-300/30 blur-[150px] rounded-full pointer-events-none -z-10" />
 
         {/* === HOLOGRAPHIC BIOMECHANICAL PULL-UP BACKGROUND (AUTO ANIMATED) === */}
-        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-[0.25] pointer-events-none overflow-hidden transition-opacity duration-1000 xl:translate-x-32">
+        <div className="absolute inset-0 z-0 hidden md:flex items-center justify-center opacity-[0.25] pointer-events-none overflow-hidden transition-opacity duration-1000 xl:translate-x-32">
           <svg viewBox="0 0 1000 700" className="w-[150vw] h-[150vh] min-w-[1200px] min-h-[900px] max-w-none">
             <style>
               {`
@@ -332,7 +332,7 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-            className="text-[14vw] sm:text-[11vw] xl:text-[7.5rem] font-oswald uppercase tracking-tighter leading-[0.85] text-slate-900 drop-shadow-sm"
+            className="text-[11vw] sm:text-[9vw] xl:text-[7.5rem] font-oswald uppercase tracking-tighter leading-[0.85] text-slate-900 drop-shadow-sm"
           >
             MOLTIPLICA IL TUO METODO <br className="hidden xl:block"/> <span className="text-indigo-600 xl:mt-2 block">NON IL TUO TEMPO</span>
           </motion.h1>
@@ -341,7 +341,7 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="text-slate-600 font-medium text-base sm:text-xl max-w-xl mt-8 uppercase tracking-[0.15em] leading-[1.8] mx-auto xl:mx-0"
+            className="text-slate-600 font-medium text-sm sm:text-lg max-w-xl mt-6 sm:mt-8 normal-case tracking-normal leading-relaxed mx-auto xl:mx-0"
           >
             Passi ancora le tue serate a sistemare celle Excel? Passa i tuoi vecchi protocolli all'intelligenza artificiale, falle estrarre la tua "firma", e falle generare schede ad alto rendimento in 30 secondi netti.
           </motion.p>
@@ -350,7 +350,7 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="w-full max-w-lg mt-12 p-1.5 bg-white/70 backdrop-blur-md border border-indigo-100/50 rounded-[1.25rem] shadow-xl hover:shadow-2xl transition-all duration-500 mx-auto xl:mx-0 group"
+            className="w-full max-w-lg mt-8 sm:mt-12 p-1.5 bg-white/70 backdrop-blur-md border border-indigo-100/50 rounded-[1.25rem] shadow-xl hover:shadow-2xl transition-all duration-500 mx-auto xl:mx-0 group"
           >
             {success ? (
               <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="p-8 text-center space-y-3 bg-white rounded-2xl">
