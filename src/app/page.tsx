@@ -245,11 +245,11 @@ export default function LandingPage() {
       </header>
 
       {/* === HERO SECTION CON GLASSMORPHISM === */}
-      <section className="relative w-full min-h-[100svh] pt-36 xl:pt-24 flex flex-col items-center xl:items-start xl:justify-center z-10 max-w-7xl mx-auto px-4 sm:px-8 overflow-visible">
+      <section className="relative w-full min-h-[100svh] pt-36 xl:pt-24 flex flex-col items-center xl:items-start xl:justify-center z-10 max-w-7xl mx-auto px-4 sm:px-8 overflow-hidden">
         <div className="absolute top-[-10%] right-[0%] w-[1000px] h-[1000px] bg-gradient-to-br from-indigo-300/30 to-purple-300/30 blur-[150px] rounded-full pointer-events-none -z-10" />
 
         {/* === HOLOGRAPHIC BIOMECHANICAL PULL-UP BACKGROUND (AUTO ANIMATED) === */}
-        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-[0.20] md:opacity-[0.25] pointer-events-none overflow-hidden transition-opacity duration-1000 xl:translate-x-32">
+        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-[0.35] md:opacity-[0.25] pointer-events-none overflow-hidden transition-opacity duration-1000 xl:translate-x-32">
           <svg viewBox="0 0 1000 700" className="w-[150vw] h-[150vh] min-w-[1200px] min-h-[900px] max-w-none">
             <style>
               {`
@@ -318,7 +318,7 @@ export default function LandingPage() {
           </svg>
         </div>
 
-        <div className="xl:w-[55%] flex flex-col justify-center text-center xl:text-left relative z-20 bg-white/30 backdrop-blur-xl md:bg-transparent md:backdrop-blur-none rounded-3xl p-6 md:p-0 border border-white/40 md:border-transparent shadow-lg md:shadow-none">
+        <div className="xl:w-[55%] flex flex-col justify-center text-center xl:text-left relative z-20 p-4 md:p-0">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -332,7 +332,7 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-            className="text-[11vw] sm:text-[9vw] xl:text-[7.5rem] font-oswald uppercase tracking-tighter leading-[0.85] text-slate-900 drop-shadow-sm"
+            className="text-[11vw] sm:text-[9vw] xl:text-[7.5rem] font-oswald uppercase tracking-tighter leading-[0.85] text-slate-900 drop-shadow-[0_2px_4px_rgba(249,247,242,0.9)]"
           >
             MOLTIPLICA IL TUO METODO <br className="hidden xl:block"/> <span className="text-indigo-600 xl:mt-2 block">NON IL TUO TEMPO</span>
           </motion.h1>
