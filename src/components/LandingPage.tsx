@@ -3,7 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { supabase } from "@/lib/supabase";
-import { Loader2, Cpu, Dna, ShieldAlert, Sparkles, TerminalSquare, Send, Target, Users, Database, BrainCircuit, CheckSquare, Layers, XCircle, ArrowRight, ChevronDown, Activity, CheckCircle2, Upload, Zap, Star, Quote } from "lucide-react";
+import { Loader2, Cpu, Dna, ShieldAlert, Sparkles, Target, Database, BrainCircuit, CheckSquare, Layers, XCircle, ArrowRight, ChevronDown, Activity, CheckCircle2, Upload, Zap, Star, Quote } from "lucide-react";
+import type { Dictionary } from "@/i18n/dictionaries";
 
 // Animation Variants
 const fadeUp = {
@@ -40,7 +41,7 @@ const AnimatedCounter = ({ target }: { target: number }) => {
   return <span ref={ref}>-{count}</span>;
 };
 
-const Marquee = () => (
+const Marquee = ({ dict }: { dict: Dictionary }) => (
   <div className="w-full overflow-hidden bg-white/50 border-y border-indigo-100 py-6 mt-20 relative flex items-center">
     <div className="absolute left-0 w-32 h-full bg-gradient-to-r from-[#F9F7F2] to-transparent z-10" />
     <div className="absolute right-0 w-32 h-full bg-gradient-to-l from-[#F9F7F2] to-transparent z-10" />
@@ -51,11 +52,11 @@ const Marquee = () => (
     >
       {[...Array(4)].map((_, i) => (
         <div key={i} className="flex gap-16 items-center">
-          <span className="text-sm font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2"><CheckCircle2 size={16} className="text-emerald-500" /> SCHEDE IN 30 SECONDI</span>
+          <span className="text-sm font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2"><CheckCircle2 size={16} className="text-emerald-500" /> {dict.marquee[0].text}</span>
           <span className="text-xl font-oswald text-slate-300">CALI.ATHLETICS</span>
-          <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">💪 DA 30 A 100+ ALLIEVI</span>
+          <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">💪 {dict.marquee[1].text}</span>
           <span className="text-xl font-oswald text-slate-300">STREET WORKOUT PRO</span>
-          <span className="text-sm font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2"><Target size={16} className="text-indigo-500" /> IL TUO STILE, AUTOMATIZZATO</span>
+          <span className="text-sm font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2"><Target size={16} className="text-indigo-500" /> {dict.marquee[2].text}</span>
           <span className="text-xl font-oswald text-slate-300">CALI.AI COACH</span>
         </div>
       ))}
@@ -63,7 +64,7 @@ const Marquee = () => (
   </div>
 );
 
-const GlassMockup = () => (
+const GlassMockup = ({ dict }: { dict: Dictionary }) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.9, rotateY: 10 }}
     animate={{ opacity: 1, scale: 1, rotateY: 0 }}
@@ -76,7 +77,7 @@ const GlassMockup = () => (
       <div className="flex items-center justify-between border-b border-indigo-100/50 pb-4 mb-4">
         <div className="flex items-center gap-3">
           <BrainCircuit className="text-indigo-500 w-5 h-5" />
-          <span className="font-oswald text-sm tracking-wider uppercase text-slate-700">Analisi del tuo stile...</span>
+          <span className="font-oswald text-sm tracking-wider uppercase text-slate-700">{dict.mockup.analyzing}</span>
         </div>
         <div className="flex gap-1.5">
           <div className="w-2.5 h-2.5 rounded-full bg-slate-200" />
@@ -89,14 +90,14 @@ const GlassMockup = () => (
       <div className="space-y-4">
         <div className="flex justify-between items-end mb-6">
           <div>
-            <div className="text-[10px] font-bold text-indigo-500 uppercase tracking-widest mb-1">Impara dal tuo storico</div>
-            <div className="text-xl font-oswald text-slate-800 uppercase">Focus: Ipertrofia + Skills</div>
+            <div className="text-[10px] font-bold text-indigo-500 uppercase tracking-widest mb-1">{dict.mockup.learn}</div>
+            <div className="text-xl font-oswald text-slate-800 uppercase">{dict.mockup.focus}</div>
           </div>
-          <div className="px-3 py-1 bg-emerald-100/50 border border-emerald-200 text-emerald-700 text-[10px] font-bold uppercase rounded-md flex items-center gap-1"><CheckSquare size={12} /> Stile Appreso</div>
+          <div className="px-3 py-1 bg-emerald-100/50 border border-emerald-200 text-emerald-700 text-[10px] font-bold uppercase rounded-md flex items-center gap-1"><CheckSquare size={12} /> {dict.mockup.learned}</div>
         </div>
 
         {[
-          { icon: <Activity className="text-orange-500" size={16} />, title: "Planche Lean Push Up", sub: "Protrazione scapolare", sets: "4x", reps: "6-8" },
+          { icon: <Activity className="text-orange-500" size={16} />, title: "Planche Lean Push Up", sub: dict.bento.preview.ex1_detail, sets: "4x", reps: "6-8" },
           { icon: <Layers className="text-indigo-500" size={16} />, title: "Tuck Planche Hold", sub: "Isometria", sets: "4x", reps: "12s" },
           { icon: <Database className="text-purple-500" size={16} />, title: "HSPU al muro", sub: "RPE 8", sets: "4x", reps: "5" }
         ].map((item, i) => (
@@ -125,7 +126,7 @@ const GlassMockup = () => (
   </motion.div>
 );
 
-const BentoGrid = () => (
+const BentoGrid = ({ dict }: { dict: Dictionary }) => (
   <motion.div
     variants={staggerContainer}
     initial="hidden"
@@ -139,8 +140,8 @@ const BentoGrid = () => (
         <div className="w-14 h-14 bg-indigo-50 border border-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform duration-500">
           <BrainCircuit size={28} />
         </div>
-        <h3 className="font-oswald text-3xl sm:text-4xl uppercase tracking-tight mb-4 text-slate-900 leading-[1.1]">Il Tuo Metodo,<br />Automatizzato</h3>
-        <p className="text-slate-500 font-medium max-w-md leading-relaxed">Carica le schede che hai già fatto per i tuoi allievi. CALI.AI impara come ragioni: quali esercizi scegli, come gestisci i volumi, come imposti le progressioni. Da lì in poi genera schede nuove che sembrano fatte da te, in pochi secondi.</p>
+        <h3 className="font-oswald text-3xl sm:text-4xl uppercase tracking-tight mb-4 text-slate-900 leading-[1.1]" dangerouslySetInnerHTML={{ __html: dict.bento.method.title }}></h3>
+        <p className="text-slate-500 font-medium max-w-md leading-relaxed">{dict.bento.method.desc}</p>
       </div>
     </motion.div>
 
@@ -154,12 +155,12 @@ const BentoGrid = () => (
       </motion.div>
       <div className="relative z-10 flex flex-col h-full justify-between">
         <div>
-          <h3 className="font-oswald text-2xl sm:text-3xl uppercase tracking-tight mb-4 text-white">Più Allievi,<br />Meno Sbattimento</h3>
-          <p className="text-indigo-200/80 font-medium text-sm leading-relaxed">Oggi per ogni scheda perdi 30-40 minuti tra Excel, calcoli e formattazione. Con CALI.AI servono 30 secondi. Segui 100 allievi con lo sforzo che oggi dedichi a 10.</p>
+          <h3 className="font-oswald text-2xl sm:text-3xl uppercase tracking-tight mb-4 text-white" dangerouslySetInnerHTML={{ __html: dict.bento.students.title }}></h3>
+          <p className="text-indigo-200/80 font-medium text-sm leading-relaxed">{dict.bento.students.desc}</p>
         </div>
         <div className="mt-12 text-5xl font-oswald text-white flex items-baseline tracking-tighter">
           <AnimatedCounter target={85} /><span className="text-2xl text-indigo-300 ml-1">%</span>
-          <span className="text-[10px] ml-3 mb-2 font-sans font-bold uppercase tracking-widest text-indigo-300">Lavoro<br />Manuale</span>
+          <span className="text-[10px] ml-3 mb-2 font-sans font-bold uppercase tracking-widest text-indigo-300" dangerouslySetInnerHTML={{ __html: dict.bento.students.manualWork }}></span>
         </div>
       </div>
     </motion.div>
@@ -168,11 +169,11 @@ const BentoGrid = () => (
       <div className="w-14 h-14 bg-rose-100 text-rose-600 rounded-2xl flex items-center justify-center mb-8">
         <ShieldAlert size={28} />
       </div>
-      <h3 className="font-oswald text-2xl sm:text-3xl uppercase tracking-tight mb-6 text-slate-900 leading-[1.1]">Dove Ti Blocchi<br />Oggi</h3>
+      <h3 className="font-oswald text-2xl sm:text-3xl uppercase tracking-tight mb-6 text-slate-900 leading-[1.1]" dangerouslySetInnerHTML={{ __html: dict.bento.stuck.title }}></h3>
       <ul className="space-y-4 text-sm text-rose-900/70 font-medium">
-        <li className="flex gap-3 items-start"><XCircle size={18} className="text-rose-400 shrink-0 mt-0.5" /> Excel non scala: oltre 25-30 allievi diventa ingestibile.</li>
-        <li className="flex gap-3 items-start"><XCircle size={18} className="text-rose-400 shrink-0 mt-0.5" /> I tuoi allievi ricevono PDF scomodi da leggere in palestra.</li>
-        <li className="flex gap-3 items-start"><XCircle size={18} className="text-rose-400 shrink-0 mt-0.5" /> Passi più tempo sui fogli di calcolo che a fare il coach.</li>
+        <li className="flex gap-3 items-start"><XCircle size={18} className="text-rose-400 shrink-0 mt-0.5" /> {dict.bento.stuck.l1}</li>
+        <li className="flex gap-3 items-start"><XCircle size={18} className="text-rose-400 shrink-0 mt-0.5" /> {dict.bento.stuck.l2}</li>
+        <li className="flex gap-3 items-start"><XCircle size={18} className="text-rose-400 shrink-0 mt-0.5" /> {dict.bento.stuck.l3}</li>
       </ul>
     </motion.div>
 
@@ -182,21 +183,21 @@ const BentoGrid = () => (
         <div className="flex-1">
           <div className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest mb-4 flex items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
-            Anteprima Live
+            {dict.bento.preview.live}
           </div>
-          <h3 className="font-oswald text-3xl sm:text-4xl uppercase tracking-tight mb-4 text-white">Basta PDF.<br />I Tuoi Allievi Meritano Un'App</h3>
-          <p className="text-slate-400 font-medium text-sm leading-relaxed max-w-sm">Le schede vengono servite ai tuoi allievi tramite un'interfaccia mobile curata nei minimi dettagli. Niente più tabelle illeggibili: ogni allievo apre l'app e sa esattamente cosa fare.</p>
+          <h3 className="font-oswald text-3xl sm:text-4xl uppercase tracking-tight mb-4 text-white" dangerouslySetInnerHTML={{ __html: dict.bento.preview.title }}></h3>
+          <p className="text-slate-400 font-medium text-sm leading-relaxed max-w-sm">{dict.bento.preview.desc}</p>
         </div>
         <div className="w-full md:w-[45%] p-5 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm shadow-xl relative mt-8 md:mt-0">
           <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-slate-800 rounded-full border-4 border-slate-900" />
           <div className="flex justify-between items-center mb-5">
-            <div className="text-xs font-bold uppercase tracking-widest text-slate-300">Giorno 1 - Push</div>
+            <div className="text-xs font-bold uppercase tracking-widest text-slate-300">{dict.bento.preview.day1}</div>
             <ChevronDown size={16} className="text-slate-500" />
           </div>
           {[
-            { name: "Planche Lean Push Up", detail: "Protrazione att.", sets: "4x6" },
+            { name: "Planche Lean Push Up", detail: dict.bento.preview.ex1_detail, sets: "4x6" },
             { name: "Pseudo Planche PU", detail: "RPE 8", sets: "3x8" },
-            { name: "Dip agli Anelli", detail: "Eccentrica 3s", sets: "3x10" },
+            { name: "Dip agli Anelli", detail: dict.bento.preview.ex3_detail, sets: "3x10" },
           ].map((ex, i) => (
             <div key={i} className="flex items-center justify-between py-2.5 px-3 mb-2 bg-white/5 border border-white/5 rounded-lg">
               <div>
@@ -212,7 +213,7 @@ const BentoGrid = () => (
   </motion.div>
 );
 
-export default function LandingPage() {
+export default function LandingPage({ dict }: { dict: Dictionary }) {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -233,7 +234,7 @@ export default function LandingPage() {
       setSuccess(true);
     } catch (err: any) {
       console.error('Supabase error:', err);
-      setError('Qualcosa è andato storto. Riprova.');
+      setError(dict.form.error);
     } finally {
       setLoading(false);
     }
@@ -254,11 +255,11 @@ export default function LandingPage() {
 
           <div className="flex items-center gap-6">
             <div className="hidden md:flex gap-8 text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">
-              <div className="flex items-center gap-2 hover:text-indigo-600 transition-colors cursor-pointer"><Cpu size={14} /> PER COACH</div>
-              <div className="flex items-center gap-2 text-indigo-600"><Dna size={14} /> AI ASSISTANT ATTIVO</div>
+              <div className="flex items-center gap-2 hover:text-indigo-600 transition-colors cursor-pointer"><Cpu size={14} /> {dict.header.coach}</div>
+              <div className="flex items-center gap-2 text-indigo-600"><Dna size={14} /> {dict.header.assistant}</div>
             </div>
             <button onClick={() => document.getElementById('platform')?.scrollIntoView({ behavior: 'smooth' })} className="hidden sm:block px-5 py-2.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 shadow-sm text-[10px] font-bold uppercase tracking-widest rounded-xl transition-all">
-              Scopri il Sistema
+              {dict.header.discover}
             </button>
           </div>
         </div>
@@ -336,7 +337,7 @@ export default function LandingPage() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="inline-flex items-center gap-3 px-4 py-2 bg-white border border-indigo-100/60 rounded-full text-[10px] sm:text-xs font-bold text-indigo-600 uppercase tracking-[0.2em] shadow-sm mb-6 mx-auto xl:mx-0 w-fit"
           >
-            <Sparkles size={14} className="text-indigo-500" /> L'Assistente AI per Coach di Calisthenics
+            <Sparkles size={14} className="text-indigo-500" /> {dict.hero.badge}
           </motion.div>
 
           <motion.h1
@@ -345,8 +346,8 @@ export default function LandingPage() {
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
             className="text-[11vw] sm:text-[9vw] xl:text-[7.5rem] font-oswald uppercase tracking-tighter leading-[0.85] text-slate-900"
           >
-            MOLTIPLICA IL TUO METODO <br className="hidden xl:block" />
-            <span className="text-indigo-600 xl:mt-2 block">NON IL TUO TEMPO</span>
+            {dict.hero.title1} <br className="hidden xl:block" />
+            <span className="text-indigo-600 xl:mt-2 block">{dict.hero.title2}</span>
           </motion.h1>
 
           <motion.p
@@ -355,7 +356,7 @@ export default function LandingPage() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="text-slate-600 font-medium text-sm sm:text-lg max-w-xl mt-6 sm:mt-8 normal-case tracking-normal leading-relaxed mx-auto xl:mx-0"
           >
-            Passi le serate a compilare schede su Excel? Carica quelle che hai già fatto, l'IA impara il tuo stile e ne genera di nuove — identiche alle tue — in 30 secondi.
+            {dict.hero.desc}
           </motion.p>
 
           <motion.div
@@ -367,18 +368,18 @@ export default function LandingPage() {
             {success ? (
               <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="p-8 text-center space-y-3 bg-white rounded-2xl">
                 <ShieldAlert className="w-12 h-12 text-emerald-500 mx-auto mb-4" />
-                <div className="text-lg font-bold text-slate-900 uppercase tracking-widest font-oswald">Sei Dentro</div>
-                <p className="text-sm text-slate-500 font-medium">Ti abbiamo riservato un posto. Ti contatteremo appena apriamo il beta.</p>
+                <div className="text-lg font-bold text-slate-900 uppercase tracking-widest font-oswald">{dict.form.successTitle}</div>
+                <p className="text-sm text-slate-500 font-medium">{dict.form.successDesc}</p>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="p-2 sm:p-2.5 bg-white rounded-2xl flex flex-col sm:flex-row gap-2 relative overflow-hidden">
                 <div className="absolute inset-0 bg-indigo-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none" />
                 <div className="relative flex-1 flex items-center z-10">
                   <span className="absolute left-4 text-indigo-400 font-black text-lg">{">"}</span>
-                  <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email@coach.it" className="w-full font-sans bg-transparent border-none py-3.5 pl-10 pr-4 text-sm text-slate-900 focus:outline-none transition-all placeholder:text-slate-400 font-medium" />
+                  <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder={dict.form.placeholder} className="w-full font-sans bg-transparent border-none py-3.5 pl-10 pr-4 text-sm text-slate-900 focus:outline-none transition-all placeholder:text-slate-400 font-medium" />
                 </div>
                 <button type="submit" disabled={loading} className="py-3.5 px-8 font-sans bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-300 text-white text-[11px] sm:text-xs font-black uppercase tracking-[0.15em] rounded-xl transition-all flex items-center justify-center gap-2 shadow-md relative z-10">
-                  {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <>Diventa Beta Tester <ArrowRight size={14} /></>}
+                  {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <>{dict.form.submit} <ArrowRight size={14} /></>}
                 </button>
                 {error && <p className="text-rose-500 text-xs font-medium text-center sm:text-left mt-2 w-full">{error}</p>}
               </form>
@@ -398,17 +399,17 @@ export default function LandingPage() {
                 </div>
               ))}
             </div>
-            <span>50+ coach già in lista d'attesa</span>
+            <span>{dict.hero.waitlist}</span>
           </motion.div>
         </div>
 
-        <GlassMockup />
+        <GlassMockup dict={dict} />
       </section>
 
-      <Marquee />
+      <Marquee dict={dict} />
 
       <div id="platform" className="w-full flex-col relative z-20 pb-32">
-        <BentoGrid />
+        <BentoGrid dict={dict} />
 
         {/* === COME FUNZIONA - 3 STEP === */}
         <motion.section
@@ -420,16 +421,16 @@ export default function LandingPage() {
         >
           <motion.div variants={fadeUp} className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 border border-indigo-100/50 rounded-full text-[10px] font-bold text-indigo-600 uppercase tracking-[0.2em] mx-auto shadow-sm mb-6">
-              <Zap size={14} /> Come Funziona
+              <Zap size={14} /> {dict.steps.badge}
             </div>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-oswald uppercase tracking-tighter text-slate-900 leading-[0.9]">Tre Step.<br />Il Resto Lo Fa l'IA.</h2>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-oswald uppercase tracking-tighter text-slate-900 leading-[0.9]" dangerouslySetInnerHTML={{ __html: dict.steps.title }}></h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {[
-              { step: "01", icon: <Upload size={28} />, title: "Carica le tue schede", desc: "Trascina i file Excel o PDF delle schede che hai già preparato per i tuoi allievi. Bastano anche solo 5-10 schede." },
-              { step: "02", icon: <BrainCircuit size={28} />, title: "L'IA impara il tuo stile", desc: "CALI.AI analizza come scegli gli esercizi, come gestisci le progressioni e come bilanci i volumi. In pochi minuti ha capito come ragioni." },
-              { step: "03", icon: <Zap size={28} />, title: "Genera schede in 30 secondi", desc: "Inserisci livello e obiettivo dell'allievo. L'IA genera una scheda completa che sembra scritta da te. Rivedi, aggiusta, consegna." }
+              { step: "01", icon: <Upload size={28} />, title: dict.steps.s1Title, desc: dict.steps.s1Desc },
+              { step: "02", icon: <BrainCircuit size={28} />, title: dict.steps.s2Title, desc: dict.steps.s2Desc },
+              { step: "03", icon: <Zap size={28} />, title: dict.steps.s3Title, desc: dict.steps.s3Desc }
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -457,14 +458,14 @@ export default function LandingPage() {
           className="max-w-7xl mx-auto px-4 sm:px-8 mt-24 sm:mt-32"
         >
           <motion.div variants={fadeUp} className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-oswald uppercase tracking-tighter text-slate-900">Cosa Dicono i Coach</h2>
+            <h2 className="text-4xl sm:text-5xl font-oswald uppercase tracking-tighter text-slate-900">{dict.testimonials.title}</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { name: "Marco R.", role: "Coach Planche & Handstand", quote: "Facevo 3 ore al giorno solo per aggiornare le schede. Ora le genero in meno di un minuto e sono identiche a come le avrei fatte io.", img: "https://i.pravatar.cc/100?img=12" },
-              { name: "Sara T.", role: "Preparatrice Street Workout", quote: "I miei allievi pensano ancora che le schede le scriva a mano. La qualità è altissima, non sembra un generatore automatico.", img: "https://i.pravatar.cc/100?img=25" },
-              { name: "Luca D.", role: "Coach Online — 80+ allievi", quote: "Sono passato da 35 a 80 allievi senza assumere nessuno. CALI.AI ha capito esattamente come imposto le progressioni.", img: "https://i.pravatar.cc/100?img=53" }
+              { name: "Marco R.", role: dict.testimonials.t1.role, quote: dict.testimonials.t1.quote, img: "https://i.pravatar.cc/100?img=12" },
+              { name: "Sara T.", role: dict.testimonials.t2.role, quote: dict.testimonials.t2.quote, img: "https://i.pravatar.cc/100?img=25" },
+              { name: "Luca D.", role: dict.testimonials.t3.role, quote: dict.testimonials.t3.quote, img: "https://i.pravatar.cc/100?img=53" }
             ].map((t, i) => (
               <motion.div
                 key={i}
@@ -495,14 +496,12 @@ export default function LandingPage() {
           className="text-center mt-32 px-4 space-y-8 max-w-3xl mx-auto"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-rose-50 border border-rose-100/50 rounded-full text-[10px] font-bold text-rose-600 uppercase tracking-[0.2em] mx-auto shadow-sm">
-            <XCircle size={14} /> Posti Beta Limitati
+            <XCircle size={14} /> {dict.cta.badge}
           </div>
-          <h2 className="text-5xl sm:text-6xl md:text-7xl font-oswald uppercase tracking-tighter text-slate-900 leading-[0.9]">
-            Smetti di Fare<br />Il Data Entry
-          </h2>
-          <p className="text-slate-500 font-medium text-lg max-w-lg mx-auto leading-relaxed">Dedica il tuo tempo a fare il coach, non a compilare fogli di calcolo. Entra nella lista d'attesa e inizia a creare schede in automatico.</p>
+          <h2 className="text-5xl sm:text-6xl md:text-7xl font-oswald uppercase tracking-tighter text-slate-900 leading-[0.9]" dangerouslySetInnerHTML={{ __html: dict.cta.title }}></h2>
+          <p className="text-slate-500 font-medium text-lg max-w-lg mx-auto leading-relaxed">{dict.cta.desc}</p>
           <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="inline-flex items-center justify-center gap-3 px-10 py-5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-black uppercase tracking-[0.2em] rounded-2xl transition-all shadow-xl hover:shadow-indigo-500/30 hover:-translate-y-1 mt-4">
-            Entra nella lista d'attesa <ArrowRight size={16} />
+            {dict.cta.btn} <ArrowRight size={16} />
           </button>
         </motion.section>
       </div>
@@ -511,8 +510,8 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
           <div className="flex items-center gap-3 text-slate-600"><img src="/logo.png" alt="CALI.AI" className="w-6 h-6" /> CALI.AI INC.</div>
           <div className="flex gap-8">
-            <a href="#" className="hover:text-indigo-600 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-indigo-600 transition-colors">Termini di Servizio</a>
+            <a href="#" className="hover:text-indigo-600 transition-colors">{dict.footer.privacy}</a>
+            <a href="#" className="hover:text-indigo-600 transition-colors">{dict.footer.terms}</a>
           </div>
           <div>EST. 2026</div>
         </div>
