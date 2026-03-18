@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     openGraph: {
       title: dict.meta.ogTitle,
       description: dict.meta.ogDesc,
-      images: ["/logo.png"],
+      images: ["/logo.svg"],
     },
   };
 }

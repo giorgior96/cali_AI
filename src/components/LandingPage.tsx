@@ -53,11 +53,11 @@ const Marquee = ({ dict }: { dict: Dictionary }) => (
       {[...Array(4)].map((_, i) => (
         <div key={i} className="flex gap-16 items-center">
           <span className="text-sm font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2"><CheckCircle2 size={16} className="text-emerald-500" /> {dict.marquee[0].text}</span>
-          <span className="text-xl font-oswald text-slate-300">CALI.ATHLETICS</span>
+          <span className="text-xl font-oswald text-slate-300">SESSION.ATHLETICS</span>
           <span className="text-sm font-bold text-slate-400 uppercase tracking-widest">💪 {dict.marquee[1].text}</span>
-          <span className="text-xl font-oswald text-slate-300">STREET WORKOUT PRO</span>
+          <span className="text-xl font-oswald text-slate-300">PERSONAL TRAINER PRO</span>
           <span className="text-sm font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2"><Target size={16} className="text-indigo-500" /> {dict.marquee[2].text}</span>
-          <span className="text-xl font-oswald text-slate-300">CALI.AI COACH</span>
+          <span className="text-xl font-oswald text-slate-300">SESSION.AI COACH</span>
         </div>
       ))}
     </motion.div>
@@ -97,9 +97,9 @@ const GlassMockup = ({ dict }: { dict: Dictionary }) => (
         </div>
 
         {[
-          { icon: <Activity className="text-orange-500" size={16} />, title: "Planche Lean Push Up", sub: dict.bento.preview.ex1_detail, sets: "4x", reps: "6-8" },
-          { icon: <Layers className="text-indigo-500" size={16} />, title: "Tuck Planche Hold", sub: "Isometria", sets: "4x", reps: "12s" },
-          { icon: <Database className="text-purple-500" size={16} />, title: "HSPU al muro", sub: "RPE 8", sets: "4x", reps: "5" }
+          { icon: <Activity className="text-orange-500" size={16} />, title: "Squat con Bilanciere", sub: dict.bento.preview.ex1_detail, sets: "4x", reps: "6-8" },
+          { icon: <Layers className="text-indigo-500" size={16} />, title: "Stacchi da Terra", sub: "RPE 8", sets: "4x", reps: "5" },
+          { icon: <Database className="text-purple-500" size={16} />, title: "Affondi con Manubri", sub: "RPE 8", sets: "3x", reps: "10" }
         ].map((item, i) => (
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -195,9 +195,9 @@ const BentoGrid = ({ dict }: { dict: Dictionary }) => (
             <ChevronDown size={16} className="text-slate-500" />
           </div>
           {[
-            { name: "Planche Lean Push Up", detail: dict.bento.preview.ex1_detail, sets: "4x6" },
-            { name: "Pseudo Planche PU", detail: "RPE 8", sets: "3x8" },
-            { name: "Dip agli Anelli", detail: dict.bento.preview.ex3_detail, sets: "3x10" },
+            { name: "Squat con Bilanciere", detail: dict.bento.preview.ex1_detail, sets: "4x6" },
+            { name: "Leg Press 45°", detail: "RPE 8", sets: "3x8" },
+            { name: "Leg Extension", detail: dict.bento.preview.ex3_detail, sets: "3x10" },
           ].map((ex, i) => (
             <div key={i} className="flex items-center justify-between py-2.5 px-3 mb-2 bg-white/5 border border-white/5 rounded-lg">
               <div>
@@ -247,9 +247,9 @@ export default function LandingPage({ dict }: { dict: Dictionary }) {
       <header className="fixed top-0 z-50 w-full backdrop-blur-xl border-b border-indigo-100 bg-white/70 shadow-sm transition-all duration-300">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src="/logo.png" alt="CALI.AI" className="w-9 h-9" />
+            <img src="/logo.svg" alt="SESSION.AI" className="w-9 h-9" />
             <span className="font-black text-2xl tracking-tighter text-slate-900 font-oswald relative top-0.5">
-              CALI<span className="text-indigo-600">.AI</span>
+              SESSION<span className="text-indigo-600">.AI</span>
             </span>
           </div>
 
@@ -508,7 +508,7 @@ export default function LandingPage({ dict }: { dict: Dictionary }) {
 
       <footer className="w-full border-t border-indigo-100/50 bg-white py-10 relative z-20 mt-auto">
         <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-          <div className="flex items-center gap-3 text-slate-600"><img src="/logo.png" alt="CALI.AI" className="w-6 h-6" /> CALI.AI INC.</div>
+          <div className="flex items-center gap-3 text-slate-600"><img src="/logo.svg" alt="SESSION.AI" className="w-6 h-6" /> SESSION.AI INC.</div>
           <div className="flex gap-8">
             <a href="#" className="hover:text-indigo-600 transition-colors">{dict.footer.privacy}</a>
             <a href="#" className="hover:text-indigo-600 transition-colors">{dict.footer.terms}</a>
